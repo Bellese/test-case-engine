@@ -1,3 +1,12 @@
+---
+name: User Story
+about: Create User Stories
+title: ''
+labels: ''
+assignees: ''
+
+---
+
 ### User Story
 As a 
 I'd like to 
