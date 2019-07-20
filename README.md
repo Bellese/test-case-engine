@@ -17,6 +17,6 @@ The __fields__ section can have one or more items with the following structure
 
 There is a sample input file included in the repository.  See input.sample.yaml for details.
 
-To run the application with the sample input file, run the following command:
+To run the application with the sample input file, run the following command from the `/src` directory:
 
 go run main.go input.sample.yaml
