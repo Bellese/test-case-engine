@@ -10,13 +10,13 @@ List related PRs against other branches:
 | --------------- | -------- |
 | other_pr_master | [link]() |
 
-## Related Jira Tickets
+## Related Issues
 
 List related Issues:
 
 | ticket   | link     |
 | -------- | -------- |
-| github-x | [link]() |
+| github-x | # |
 
 ## Todos
 
