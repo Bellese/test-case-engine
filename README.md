@@ -19,7 +19,9 @@ There is a sample input file included in the repository.  See input.sample.yaml 
 
 To run the application with the sample input file, run the following command from the `/src` directory:
 
-`go run main.go input.sample.yaml`
+```sh
+go run main.go input.sample.yaml
+```
 
 ## SonarQube
 For convenience a `docker-compose.yaml` file is included in this repository which will standup a SonarQube and PostgreSQL container to use in code scanning.  To use this service, you will need to set the following environment variables:
@@ -33,4 +35,11 @@ Once that's set you can run the service:
 docker-compose up -d
 ```
 
-Checkout SonarQube running at http://localhost:9000
+SonarQube will be running at http://localhost:9000
+
+You will need `sonar-scanner` running locally. To do that follow the directions here: https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/
+
+Once your local SonarQube instance is running and `sonar-scanner` is installed you can analyze this project from the project root by simply running:
+```sh
+sonar-scanner
+```
