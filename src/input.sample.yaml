@@ -1,0 +1,16 @@
+title: Sample_Application
+output: JSON
+total: 10
+fields:
+  - name: firstName
+    type: alpha
+    min: 4
+    max: 12
+  - name: lastName
+    type: alpha
+    min: 4
+    max: 12
+  - name: age
+    type: int
+    min: 0
+    max: 100
