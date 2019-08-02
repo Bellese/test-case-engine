@@ -1,14 +1,14 @@
 package utils
 
 import (
+	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"math/rand"
 	"os"
 	"strconv"
 
-	"test-case-engine/models"
-
+	"github.com/Bellese/test-case-engine/models"
 	"github.com/ghodss/yaml"
 )
 
@@ -35,7 +35,7 @@ func ParseConfigs(filename string) models.Config {
 
 // GenerateData will create an array of data
 func GenerateData(config models.Config) []map[string]string {
-	data := make([]map[string]string, config.Total)
+	data := make([]map[string]string, config.Total-1)
 
 	for i := 1; i < config.Total; i++ {
 		values := make(map[string]string)
@@ -70,4 +70,48 @@ func RandomString(min, max int) string {
 		bytes[i] = byte(65 + rand.Intn(25)) //A=65 and Z = 65+25
 	}
 	return string(bytes)
+}
+
+// FormatData formats the generated data based on the configurations set by the user
+func FormatData(config models.Config, generatedData []map[string]string) {
+	if config.Format == "JSON" {
+		formatDataJSON(generatedData)
+	} else if config.Format == "SQL" {
+		formatDataSQL(config, generatedData)
+	} else {
+		panic("Format not supported: " + config.Format)
+	}
+}
+
+func formatDataJSON(generatedData []map[string]string) {
+	jsonString, err := json.Marshal(generatedData)
+	if err != nil {
+		fmt.Println("Error Formatting JSON")
+		panic(err)
+	}
+	fmt.Println(string(jsonString))
+}
+
+func formatDataSQL(config models.Config, generatedData []map[string]string) {
+	columnsSQL := ""
+	for index, values := range generatedData {
+		// fmt.Println(value)
+		valuesSQL := ""
+		counter := 0
+		for column, value := range values {
+			if index == 0 {
+				columnsSQL += "" + column + ""
+			}
+
+			valuesSQL += "'" + value + "'"
+			if counter < (len(values) - 1) {
+				if index == 0 {
+					columnsSQL += ", "
+				}
+				valuesSQL += ", "
+			}
+			counter++
+		}
+		fmt.Println("INSERT INTO " + config.Title + " (" + columnsSQL + ") VALUES (" + valuesSQL + ")")
+	}
 }

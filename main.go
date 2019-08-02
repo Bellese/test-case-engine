@@ -6,7 +6,7 @@ import (
 	"os"
 	"time"
 
-	"test-case-engine/utils"
+	"github.com/Bellese/test-case-engine/utils"
 )
 
 func main() {
@@ -22,4 +22,5 @@ func main() {
 
 	fmt.Println(generatedData)
 
+	utils.FormatData(config, generatedData)
 }
