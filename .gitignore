@@ -10,3 +10,9 @@
 
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
+
+# Don't keep .env 
+*.env
+
+# SonarQube
+.scannerwork
