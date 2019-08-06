@@ -16,3 +16,5 @@
 
 # SonarQube
 .scannerwork
+
+.DS_Store
