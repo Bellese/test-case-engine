@@ -20,7 +20,7 @@ There is a sample input file included in the repository.  See input.sample.yaml 
 To run the application with the sample input file, run the following command from the `/src` directory:
 
 ```sh
-go run main.go input.sample.yaml
+go run main.go input.sample.JSON.yaml
 ```
 
 ## SonarQube and Testing
