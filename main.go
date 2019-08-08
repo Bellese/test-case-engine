@@ -6,7 +6,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/Bellese/test-case-engine/utils"
+	"test-case-engine/utils"
 )
 
 func main() {

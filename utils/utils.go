@@ -8,7 +8,7 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/Bellese/test-case-engine/models"
+	"test-case-engine/models"
 	"github.com/ghodss/yaml"
 )
 
