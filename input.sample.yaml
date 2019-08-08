@@ -1,5 +1,5 @@
 title: Sample_Application
-output: JSON
+format: JSON
 total: 10
 fields:
   - name: firstName

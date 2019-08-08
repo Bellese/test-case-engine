@@ -11,7 +11,7 @@ type ConfigField struct {
 // Config contains all information that is needed to generate test data
 type Config struct {
 	Title  string
-	Output string
+	Format string
 	Total  int
 	Fields []ConfigField
 }
